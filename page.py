@@ -38,5 +38,9 @@ def main():
 	lat, lon = get_location()
 	return render_template('main.html', lat=lat, lon=lon)
 
+@app.route('/recs')
+def recs():
+	return render_template('recs.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
