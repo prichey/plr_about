@@ -40,7 +40,7 @@ def main():
 
 @app.route('/recs')
 def recs():
-	return render_template('main.html')
+	return render_template('recs.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
