@@ -65,9 +65,13 @@ def main():
 		except urllib2.HTTPError as e:
 			return (e.read())
 
-	lat, lon = get_location()
-	status, track = lastfm()
-	return render_template('main.html', lat=lat, lon=lon, status=status, track=track)
+	try:
+		lat, lon = get_location()
+		status, track = lastfm()
+		return render_template('main.html', lat=lat, lon=lon, status=status, track=track)
+
+	except:
+		return render_template('error.html')
 
 @app.route('/recs')
 def recs():
