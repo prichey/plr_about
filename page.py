@@ -8,12 +8,9 @@ app = Flask(__name__)
 def main():
 	def lastfm():
 
-		# You have to have your own unique two values for API_KEY and API_SECRET
-		# Obtain yours from http://www.last.fm/api/account for Last.fm
 		API_KEY = "d2e1283a31bd5b2c450f7ed61cf9ab2e" # this is a sample key
 		API_SECRET = "39aa505b402710fb60d8176a702f3acf"
 
-		# In order to perform a write operation you need to authenticate yourself
 		username = "prichey"
 		password_hash = pylast.md5("blackbird")
 
@@ -21,9 +18,7 @@ def main():
 		    API_SECRET, username = username, password_hash = password_hash)
 
 		me = pylast.User("prichey", network)
-
 		np = me.get_now_playing()
-
 		last = me.get_recent_tracks(limit=2)
 
 		if np:
@@ -32,7 +27,6 @@ def main():
 		else:
 			status = "last played:"
 			track = str(last[0][0])
-		message = str(status) + " " + str(track)
 		return status, track
 
 	OP_ACCESS = "DBCU5RGLOXVNZXIYPYMLVTCBRE"
