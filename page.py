@@ -1,12 +1,12 @@
 import os, oauth2, time, urllib, urllib2, json
 from flask import Flask, url_for, render_template
+import pylast
 
 app = Flask(__name__)
 
 @app.route('/')
 def main():
 	def lastfm():
-		import pylast
 
 		# You have to have your own unique two values for API_KEY and API_SECRET
 		# Obtain yours from http://www.last.fm/api/account for Last.fm
