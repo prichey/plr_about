@@ -24,6 +24,7 @@ def main():
 		if np:
 			status = "now playing:"
 			track = str(np)
+			print last[0]
 		else:
 			status = "last played:"
 			track = str(last[0][0])
