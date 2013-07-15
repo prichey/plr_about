@@ -1,182 +1,185 @@
 <!DOCTYPE html PUBLIC>
 <html>
-	<style type="text/css">
-		body, html {
-			margin-top: 25px;
-			margin-bottom: 40px;
-			padding: 0px;
-			border: 0px;
-			font-family: 'Courier New';
-			font-size: 14px;
-			line-height: 175%;
-			color: #333;
-			background-repeat: none;
-		}
+<style type="text/css">
+body, html {
+	width: 650px;
+	margin: 25px auto 40px auto;
+	font-family: 'Courier New';
+	font-size: 14px;
+	line-height: 175%;
+	color: #333;
+	text-decoration: normal;
+}
 
-		* {margin:  0; padding:  0;}
+* {margin: 0; padding: 0;}
 
-		a {
-			color: #00f;
-			text-decoration:  none;
-			font-weight:  normal;
-			border-bottom: 2px solid transparent;
-		}
-		a:hover {
-			color: #888;
-			border-bottom-color:  #888;
-		}
+img {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
 
-		.info {
-			line-height: 22px;
-			margin-bottom: 5px;
-			padding-bottom: 10px;
-			padding-top: 0px;
-		}
+a {
+	text-decoration: none;
+	font-weight: normal;
+	color: #00f;
+	border-bottom: 2px solid transparent;
+}
 
-		.stuff {
-			margin-bottom: 5px;
-			border-top: 1px solid #888;
-			clear: both;
-			margin-top: 10px;
-			padding-top: 10px;
-		}
+a:hover {
+	color: #888; 
+	border-bottom-color: #888;
+}
 
-		.stuff p{
-			font-size: 16px;
-			line-height: 22px;
-		}
+h1 {
+	font-size: 24px;
+	margin-bottom: 0px;
+	}
 
-		.container {
-			width: 650px;
-			margin: auto;
-		}
+h3 {
+	font-weight: normal;
+}
 
-		.avatar .image, .avatar .info {
+#container {
+	width: 650px;
+	text-align: center;
+}
+
+	.header {
+		margin: auto;
+	}
+
+		.header img {
+			height: 240px;
+			width: auto;
+			margin: 0px 20px 10px 0px;
 			float: left;
 		}
 
-		h1 {
-			font-size: 24px;
-			margin-top: 0px;
-			margin-bottom: 0px;
+		.header .info {
+			line-height: 22px;
+			/*margin-bottom: 5px;*/
+			padding-bottom: 10px;
+			padding-top: 0px;
+			float: left;
 		}
 
-		.info h2{
-			font-weight: normal;
+			.header .info h2 {
+				font-weight: normal;
+				font-size: 16px;
+				margin-top: 2px;
+				padding-bottom: 15px;
+			}
+
+			.header .info h3 {
+				font-size: 14px;
+				margin-bottom: 2px;
+			}
+
+/*	.content {
+
+	}*/
+
+		.content .wordchunk {
+			margin: 10px 0px 5px 0px;
+			clear: both;
+			border-top: 1px solid #888;
+			padding-top: 10px;
+		}
+
+		.content .wordchunk p {
 			font-size: 16px;
-			margin-top: 2px;
-			padding-bottom:15px; 
 		}
 
-		.stuff h2 {
-			font-size: 18px;
-			font-style: italic;
-			font-weight: bolder;
-		}
-
-		h3 {
-			font-size: 14px;
-			font-weight: normal;
-		}
-
-		.info h3 {
-			margin-bottom: 2px;
-			margin-top: 0px;
-		}
-
-		.avatar .image {
-			margin-right: 20px;
-			margin-bottom: 10px;
-		}
-
-		.avatar img {
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px
-		}
-
-		.more {
+		.content .chunk {
 			border-top: 1px solid #888;
 			clear: both;
-			margin-top: 10px;
+			margin: 10px 0px 20px 0px;
 			padding-top: 20px;
-			margin-bottom: 20px;
 		}
-		.more p {
-			line-height: 175%;
-		}
-	</style>
 
-	<head>
-		<title>Preston Richey</title>
-	</head>
+</style>
+<head>
+	<!-- <link rel="stylesheet" type="text/css" href="about-rewrite.css"> -->
+	<title>Preston Richey</title>
+	<meta name="Keywords" content="Preston Richey, Student, Missouri State University, Springfield, Missouri, Wichita, Kansas">
+	<meta name="Description" content="Computer Science Student"/>
+	<meta name="abstract" content="Computer Science Student, Lives in Springfield MO" />
+	<meta http-equiv="Content-Language" content="EN" />
+	<meta name="author" content="Preston Richey" />
+	<meta name="distribution" content="Global" />
+</head>
 
-	<body>
-		<div class="container">
-			<div class="avatar">
-				<div class="image">
-					<img src="http://farm8.staticflickr.com/7259/7058136133_7aeb70bbac_m.jpg" height=240/>
-				</div>
-				<div class="info">
-					<h1>Preston Richey</h1>
-					<h2>
-						CS student at <a href="http://missouristate.edu">MSU</a>
-					</h2>
-					<h3>
-						email: 
-						<a href="mailto:&#112;&#114;&#101;&#115;&#116;&#111;&#110;&#108;&#101;&#101;&#114;&#105;&#099;&#104;&#101;&#121;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#112;&#114;&#101;&#115;&#116;&#111;&#110;&#108;&#101;&#101;&#114;&#105;&#099;&#104;&#101;&#121;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
-						</a>
-					</h3>
-					<h3>tumblog:
-						<a href="http://blog.prestonrichey.com">blog.prestonrichey.com</a> | <a href="http://www.tumblr.com/liked/by/press10/">likes</a>
-					</h3>
-					<h3>
-						location via <a href="https://openpaths.cc">OpenPaths</a> : {{lat, lon}}
-					</h3>
-					<h3>
-						<a href="http://www.flickr.com/photos/prestonrichey/">flickr</a> | <a href="https://vimeo.com/prestonrichey">vimeo</a> | <a href="http://last.fm/user/prichey">last.fm</a> | <a href="https://svpply.com/prichey">svpply</a> | <a href="http://mlog.prestonrichey.com">2013 movie log</a>
-					</h3>
+<body>
+	<div class ="container">
+		<div class="header">
+			<div class="image">
+				<img src="http://farm8.staticflickr.com/7259/7058136133_7aeb70bbac_m.jpg"/>
+			</div>
+			<div class="info">
+				<h1>Preston Richey</h1>
+				<h2>CS student at <a href="http://missouristate.edu">MSU</a></h2>
+				<h3>email: <a href="mailto:&#112;&#114;&#101;&#115;&#116;&#111;&#110;&#108;&#101;&#101;&#114;&#105;&#099;&#104;&#101;&#121;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#112;&#114;&#101;&#115;&#116;&#111;&#110;&#108;&#101;&#101;&#114;&#105;&#099;&#104;&#101;&#121;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></h3>
+				<h3>tumblog: <a href="http://blog.prestonrichey.com">blog.prestonrichey.com</a> | <a href="http://www.tumblr.com/liked/by/press10/">likes</a></h3>
+				<h3>location via <a href="https://openpaths.cc">OpenPaths</a> : {{lat, lon}}</h3>
+				<h3><a href="http://www.flickr.com/photos/prestonrichey/">flickr</a> | <a href="https://vimeo.com/prestonrichey">vimeo</a> | <a href="http://last.fm/user/prichey">last.fm</a> | <a href="https://svpply.com/prichey">svpply</a> | <a href="http://mlog.prestonrichey.com">2013 movie log</a></h3>
+				<br>
+				<h3>Recent photos
 					<br>
-					<p>Recent photos<br>2013: 
-						<a href="http://www.flickr.com/photos/prestonrichey/sets/72157634443345923/">06</a> 
-						<a href="http://www.flickr.com/photos/prestonrichey/sets/72157633865374864/">05</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633546998136/">04</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633287408507/">03</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633291479688/">02</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157632673053320/">01</a> <br> 2012: <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157632414665860/">12</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157632163063469/">11</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631920625318/">10</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631919971285/">09</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631919909857/">08</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631021985770/">07</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634286059614/">06</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634280296495/">05</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633546998136/">04</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634284368460/">03</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634284233736/">02</a> <a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634284164670/">01</a>
-					</p>
-				</div>
-				<div class="stuff">
-					<p><em>{{status}}</em> {{track}}</p>
-				</div>
-				<div class="stuff">
-					<h2>Words</h2>
-					<p><a href="http://blog.prestonrichey.com/post/39331250761">2012</a> (a year in review)</p>
-					<p><a href="http://blog.prestonrichey.com/post/34686832586">2183 Mendoza, Belgrano</a> (about my semester in Argentina)</p>
-					<p><a href="http://blog.prestonrichey.com/post/25338122337">Jack of All Trades, Master of Most</a> (about my dad)</p>
-					<p><a href="http://blog.prestonrichey.com/post/13143031902">The Memeification of Lt. Pike</a> (sometimes it's not worth the lulz)</p>
-
-				</div>
-				<div class="more">
-					<iframe width="100%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F80088700&amp;color=888888&amp;auto_play=false&amp;show_artwork=false"></iframe>
-				</div>
-				<div class="stuff">
-					<h2>Consumer suggestions:</h2>
-					<p>For an inspiring teenager: <a href="http://en.wikipedia.org/wiki/Tavi_Gevinson">Tavi Gevinson</a></p>
-					<p>For a strategy game: <a href="http://www.amazon.com/MayFair-Games-MFG3061-Settlers-Catan/dp/B000W7JWUA/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1372278436&sr=1-1-catcorr&keywords=settlers+of+catan">Settlers of Catan</a></p>
-					<p>For a web concern: <a href="http://www.theawl.com">The Awl</a></p>
-					<p>For note-taking: <a href="http://notational.net">Notational Velocity</a></p>
-					<p>For rational TV news: <a href="http://www.nbcnews.com/id/26315908/">Rachel Maddow Show</a></p>
-					<p>For a food journal: <a href="https://store.mcsweeneys.net/t/categories/lucky-peach">Lucky Peach</a></p>
-					<p>For sneakers: <a href="http://www.amazon.com/New-Balance-Lifestyle-Sneaker-Silver/dp/B001AO4RPE/ref=sr_1_1?ie=UTF&qid=1372278188&sr=8-1&keywords=new+balance+574">New Balance 574 (gray)</a></p>
-					<p>For inexpensive raw denim: <a href="http://theunbrandedbrand.com/collections/all">The Unbranded Brand</a></p>
-					<p>For a better keyboard layout: <a href="http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak Simplified Keyboard</a></p>
-					<p>For store-bought bread: <a href="http://www.pepperidgefarm.com/ProductDetail.aspx?catID=751&prdID=11804">Pepperidge Farm Farmhouse - Oatmeal</a></p>
-					<div style="font-size: 12px"><a href="http://prestonrichey.com/recs">(...)</a></div>
-				</div>
-				<div class="more">
-				<a href="http://www.youtube.com/watch?v=EtaWWCXbtbY">
-					<img src="http://s3-ec.buzzfed.com/static/enhanced/webdr06/2013/5/21/12/anigif_enhanced-buzz-19025-1369154225-23.gif" width=100%/>
-				</a>
-				</div>
-				
+					2013: 
+					<a href="http://www.flickr.com/photos/prestonrichey/sets/72157634443345923/">06</a> 
+					<a href="http://www.flickr.com/photos/prestonrichey/sets/72157633865374864/">05</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633546998136/">04</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633287408507/">03</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633291479688/">02</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157632673053320/">01</a> 
+					<br> 
+					2012: 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157632414665860/">12</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157632163063469/">11</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631920625318/">10</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631919971285/">09</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631919909857/">08</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157631021985770/">07</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634286059614/">06</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634280296495/">05</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157633546998136/">04</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634284368460/">03</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634284233736/">02</a> 
+					<a href = "http://www.flickr.com/photos/prestonrichey/sets/72157634284164670/">01</a>
+				</h3>
 			</div>
 		</div>
-	</body>
+		<div class="content">
+			<div class="wordchunk"><p><em>{{status}}</em> {{track}}</p></div>
+			<div class="wordchunk">
+				<h2>Words:</h2>
+				<p><a href="http://blog.prestonrichey.com/post/39331250761">2012</a> (a year in review)</p>
+				<p><a href="http://blog.prestonrichey.com/post/34686832586">2183 Mendoza, Belgrano</a> (about my semester in Argentina)</p>
+				<p><a href="http://blog.prestonrichey.com/post/25338122337">Jack of All Trades, Master of Most</a> (about my dad)</p>
+				<p><a href="http://blog.prestonrichey.com/post/13143031902">The Memeification of Lt. Pike</a> (sometimes it's not worth the lulz)</p>
+			</div>
+			<div class="chunk"><iframe width="100%" height="130" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F80088700&amp;color=888888&amp;auto_play=false&amp;show_artwork=false"></iframe></div>
+			<div class="wordchunk">
+				<h2>Consumer suggestions:</h2>
+				<p>For an inspiring teenager: <a href="http://en.wikipedia.org/wiki/Tavi_Gevinson">Tavi Gevinson</a></p>
+				<p>For a strategy game: <a href="http://www.amazon.com/MayFair-Games-MFG3061-Settlers-Catan/dp/B000W7JWUA/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1372278436&sr=1-1-catcorr&keywords=settlers+of+catan">Settlers of Catan</a></p>
+				<p>For a web concern: <a href="http://www.theawl.com">The Awl</a></p>
+				<p>For note-taking: <a href="http://notational.net">Notational Velocity</a></p>
+				<p>For rational TV news: <a href="http://www.nbcnews.com/id/26315908/">Rachel Maddow Show</a></p>
+				<p>For a food journal: <a href="https://store.mcsweeneys.net/t/categories/lucky-peach">Lucky Peach</a></p>
+				<p>For sneakers: <a href="http://www.amazon.com/New-Balance-Lifestyle-Sneaker-Silver/dp/B001AO4RPE/ref=sr_1_1?ie=UTF&qid=1372278188&sr=8-1&keywords=new+balance+574">New Balance 574 (gray)</a></p>
+				<p>For inexpensive raw denim: <a href="http://theunbrandedbrand.com/collections/all">The Unbranded Brand</a></p>
+				<p>For a better keyboard layout: <a href="http://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak Simplified Keyboard</a></p>
+				<p>For store-bought bread: <a href="http://www.pepperidgefarm.com/ProductDetail.aspx?catID=751&prdID=11804">Pepperidge Farm Farmhouse - Oatmeal</a></p>
+				<div style="font-size: 12px;">(<a href="http://prestonrichey.com/recs">...</a>)</div>
+			</div>
+			<div class="chunk">
+				<a href="http://www.youtube.com/watch?v=EtaWWCXbtbY"><img src="http://s3-ec.buzzfed.com/static/enhanced/webdr06/2013/5/21/12/anigif_enhanced-buzz-19025-1369154225-23.gif" width=100%/></a>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
+
+
