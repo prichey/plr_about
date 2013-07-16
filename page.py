@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 import os, oauth2, time, urllib, urllib2, json
 from flask import Flask, url_for, render_template
 import pylast
@@ -22,11 +24,11 @@ def main():
 		last = me.get_recent_tracks(limit=2)
 
 		if np:
-			status = "now playing:"
+			status = u"♫ now playing:"
 			track = str(np)
 			print last[0]
 		else:
-			status = "last played:"
+			status = u"last played:"
 			track = str(last[0][0])
 		return status, track
 
