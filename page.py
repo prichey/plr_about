@@ -3,6 +3,9 @@
 import os, oauth2, time, urllib, urllib2, json
 from flask import Flask, url_for, render_template
 import pylast
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 app = Flask(__name__)
 
@@ -26,9 +29,8 @@ def main():
 		if np:
 			status = u"♫ now playing:"
 			track = str(np)
-			print last[0]
 		else:
-			status = u"last played:"
+			status = "last played:"
 			track = str(last[0][0])
 		return status, track
 
@@ -62,11 +64,14 @@ def main():
 		except urllib2.HTTPError as e:
 			return (e.read())
 
+	# try:
+	lat, lon = get_location()
+	status, track = lastfm()
 	try:
-		lat, lon = get_location()
-		status, track = lastfm()
 		return render_template('main.html', lat=lat, lon=lon, status=status, track=track)
-
+	except UnicodeDecodeError:
+		utf_status, utf_track = status.encode('utf-8'), track.encode('utf-8')
+		return render_template('main.html', lat=lat, lon=lon, status=utf_status, track=utf_track)
 	except:
 		return render_template('error.html')
 
