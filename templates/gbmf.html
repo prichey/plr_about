@@ -1,0 +1,15 @@
+<html>
+<style = "text/css">
+	html {max-width: 1600px;}
+	body {text-align: center;}
+	body h1{font-family: 'Courier New'; margin-top: 10px; margin-bottom: 10px;}
+	/*.pix {margin: auto;}*/
+	img {max-width:24.3%; height: auto; margin: 0px; padding: 1px;}
+</style>
+<head><title>Preston Richey | GBMF</title></head>
+<body>
+	<h1>ground beneath my feet</h1>
+	{% for url in urls %}
+		<a href="{{url[1]}}"><img src="{{url[0]}}"></a>
+	{% endfor %}
+</body>

@@ -4,6 +4,9 @@ import os, oauth2, time, urllib, urllib2, json
 from flask import Flask, url_for, render_template
 import pylast
 import sys
+import flickrapi
+import json as j
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -78,6 +81,35 @@ def main():
 @app.route('/recs')
 def recs():
 	return render_template('recs.html')
+
+@app.route('/gbmf')
+def gbmf():
+	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
+	api_secret = "e8040aeef83b9eec"
+	user_id = "38529954@N04"
+	flickr = flickrapi.FlickrAPI(api_key, api_secret)
+	urls = []
+	for photo in flickr.walk_set('72157632455775153'):
+		id = (photo.get('id'))
+		info = flickr.photos_getInfo(photo_id=id, format="json")[14:-1]
+		lat = j.loads(info)[u'photo'][u'location'][u'latitude']
+		if str(lat)[0] != "-":
+			lat = "+" + str(lat)
+		lon = j.loads(info)[u'photo'][u'location'][u'longitude']
+		if str(lon)[0] != "-":
+			lon = "+" + str(lon)
+		location = str(lat) + "," + str(lon)
+		farm = j.loads(info)[u'photo'][u'farm']
+		server = j.loads(info)[u'photo'][u'server']
+		id = j.loads(info)[u'photo'][u'id']
+		secret = j.loads(info)[u'photo'][u'secret']
+		url = str(j.loads(info)[u'photo'][u'urls'][u'url'][0][u'_content'])
+		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + ".jpg"
+		loc_url = "http://maps.google.com/?q=" + location
+		info = (photo_url, loc_url)
+		urls.append(info)
+
+	return render_template('gbmf.html', urls=urls)
 
 if __name__ == "__main__":
     app.run(debug=True)
