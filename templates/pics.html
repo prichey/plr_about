@@ -1,0 +1,24 @@
+<html>
+<style = "text/css">
+	html {max-width: 1600px;}
+	body {text-align: center; text-decoration: normal;}
+	body h1{font-family: 'Courier New'; margin-top: 20px; margin-bottom: 10px;}
+	/*.pix {margin: auto;}*/
+	img {text-decoration: none; width: 90%; height: auto; margin: 0px; padding: 1px;}
+	a {
+		text-decoration: none;
+		font-weight: normal;
+		color: #00f;
+	}
+
+	a:hover {
+		color: #888; 
+	}
+</style>
+<head><title>Preston Richey | 099</title></head>
+<body>
+	<a href="http://www.flickr.com/photos/prestonrichey/sets/72157635151188440/"><h1>099</h1></a>
+	{% for url in urls %}
+		<a href="{{url[0]}}"><img src="{{url[1]}}"></a>
+	{% endfor %}
+</body>

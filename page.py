@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 
-import os, oauth2, time, urllib, urllib2, json
+import os, oauth2, time, urllib, urllib2
 from flask import Flask, url_for, render_template
 import pylast
 import sys
@@ -62,7 +62,7 @@ def main():
 			request = urllib2.Request(query)
 			request.headers = build_auth_header(OP_URL, 'GET')
 			connection = urllib2.urlopen(request)
-			data = json.loads(''.join(connection.readlines()))
+			data = j.loads(''.join(connection.readlines()))
 			return data[0]["lat"], data[0]["lon"]
 		except urllib2.HTTPError as e:
 			return (e.read())
@@ -110,6 +110,26 @@ def gbmf():
 		urls.append(info)
 
 	return render_template('gbmf.html', urls=urls)
+
+@app.route('/099')
+def pics():
+	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
+	api_secret = "e8040aeef83b9eec"
+	user_id = "38529954@N04"
+	flickr = flickrapi.FlickrAPI(api_key, api_secret)
+	urls = []
+	for photo in flickr.walk_set('72157635151188440'):
+		id = (photo.get('id'))
+		info = flickr.photos_getInfo(photo_id=id, format="json")[14:-1]
+		farm = j.loads(info)[u'photo'][u'farm']
+		server = j.loads(info)[u'photo'][u'server']
+		id = j.loads(info)[u'photo'][u'id']
+		secret = j.loads(info)[u'photo'][u'originalsecret']
+		url = str(j.loads(info)[u'photo'][u'urls'][u'url'][0][u'_content'])
+		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + "_o.jpg"
+		fin_url = (url, photo_url)
+		urls.append(fin_url)
+	return render_template('pics.html', urls=urls)
 
 if __name__ == "__main__":
     app.run(debug=True)
