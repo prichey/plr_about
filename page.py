@@ -111,8 +111,9 @@ def gbmf():
 
 	return render_template('gbmf.html', urls=urls)
 
-@app.route('/099')
-def pics():
+@app.route('/099', defaults={'page': 1})
+@app.route('/099/<int:page>')
+def pics(page):
 	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
 	api_secret = "e8040aeef83b9eec"
 	user_id = "38529954@N04"
@@ -129,7 +130,12 @@ def pics():
 		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + "_o.jpg"
 		fin_url = (url, photo_url)
 		urls.append(fin_url)
-	return render_template('pics.html', urls=urls)
+	pages = ((len(urls) + (9)) // 10)
+	for i in range((page - 1) * 10):
+		urls.pop(0)
+	while len(urls) > 10:
+		urls.pop()
+	return render_template('pics.html', urls=urls, pages=pages)
 
 if __name__ == "__main__":
     app.run(debug=True)
