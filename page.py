@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
 
-from flask.ext.sqlalchemy import SQLAlchemy
+# from flask.ext.sqlalchemy import SQLAlchemy
 import os, oauth2, time, urllib, urllib2
 from flask import Flask, url_for, render_template
 import pylast
@@ -12,8 +12,8 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+# db = SQLAlchemy(app)
 
 @app.route('/')
 def main():
