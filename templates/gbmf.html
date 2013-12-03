@@ -1,15 +1,19 @@
+<!DOCTYPE HTML>
 <html>
 <style = "text/css">
-	html {max-width: 1600px;}
-	body {text-align: center;}
-	body h1{font-family: 'Courier New'; margin-top: 10px; margin-bottom: 10px;}
-	/*.pix {margin: auto;}*/
-	img {max-width:24.3%; height: auto; margin: 0px; padding: 1px;}
+* {margin: 0; padding: 0; position: relative;}
+body {width: 100%; margin: 0 auto; text-align: center;}
+h1{font-family: 'Courier New'; margin-top: 10px; margin-bottom: 10px;}
+.pix a {float: left; width: 48%; max-width: 500px; margin-right: 6px; margin-top: 1px;}
+img {width:100%; height: auto;}
 </style>
 <head><title>Preston Richey | GBMF</title></head>
 <body>
 	<h1>ground beneath my feet</h1>
-	{% for url in urls %}
-		<a href="{{url[1]}}"><img src="{{url[0]}}"></a>
-	{% endfor %}
+	<div class="pix">
+		{% for url in urls %}
+			<a href="{{url[1]}}"><img src="{{url[0]}}"></a>
+		{% endfor %}
+	</div>
 </body>
+</html>
