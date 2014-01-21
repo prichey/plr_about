@@ -74,10 +74,10 @@ def main():
 	# lat, lon = get_location()
 	status, track = lastfm()
 	try:
-		return render_template('main.html')
+		return render_template('main.html', status=status, track=track)
 	except UnicodeDecodeError:
 		utf_status, utf_track = status.encode('utf-8'), track.encode('utf-8')
-		return render_template('main.html')
+		return render_template('main.html', status=status, track=track)
 	except:
 		return render_template('error.html')
 
