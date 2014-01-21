@@ -140,5 +140,9 @@ def pics(page):
 		urls.pop()
 	return render_template('pics.html', urls=urls, pages=pages)
 
+@app.route('/diptych')
+def vine():
+	return render_template('diptych.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
