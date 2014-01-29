@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<head>
 <meta charset=utf-8>
 <style type="text/css">
 body, html {
@@ -39,6 +40,10 @@ h1 {
 
 h3 {
 	font-weight: normal;
+}
+
+#internet {
+	height: auto!important; font-weight: bold; text-align: left!important;
 }
 
 #container {
@@ -93,7 +98,18 @@ h3 {
 			float: right;
 		}
 </style>
-<head>
+<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script src="https://puuuuuuthtml.s3.amazonaws.com/jquery.color-2.1.2.min.js"></script>
+<script type="text/javascript">
+function spectrum() 
+{
+    console.log('changing');
+    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    console.log(hue);
+    $('#internet').animate( { color: hue }, 1000);
+}
+setInterval(spectrum,1000);
+</script>
 	<!-- <link rel="stylesheet" type="text/css" href="about-rewrite.css"> -->
 	<title>Preston Richey | About</title>
 </head>
@@ -105,7 +121,7 @@ h3 {
 				<p>Hiya! I'm Preston. I'm an <a href="http://www.personalitypage.com/INTP.html">INTP</a>.</p>
 				<p>I grew up in Wichita, KS and now I live in Springfield, MO. In a year I'll have graduated from Missouri State with degrees in Spanish and Computer Science (and a minor in Math).</p>
 				<p>I currently work as Web Developer at <a href="http://enactus.org/">Enactus</a>, where I mostly write HTML, CSS, and PHP.</p>
-				<p>Some things I like: coffee, <a href="http://fuckyeahbrutalism.tumblr.com/page/3">brutalist</a> architecture, bikes, <a href="http://en.wikipedia.org/wiki/Mumblecore">mumblecore</a> film, local music, and Allen Ginsberg's <em><a href="http://wilypython.net/Wichita%20Vortex%20Sutra.pdf">Wichita Vortex Sutra</a></em>.</p>
+				<p>Some things I like: coffee, <br><span id="internet" style="color: rgb(190, 98, 81);">The Internet</span>, bikes, <a href="http://en.wikipedia.org/wiki/Mumblecore">mumblecore</a> film, vegetables, local music, &amp; <a href="http://sexpigeon.tumblr.com/">Sexpigeon</a>.</p>
 				<p>In 2012 <a href="http://blog.prestonrichey.com/post/34686832586">spent a semester</a> in Buenos Aires, where I drank lots of <a href="http://en.wikipedia.org/wiki/Mate_(beverage)">mate</a>, took all my classes (including tango) in Spanish, and visited <a href="http://www.flickr.com/photos/prestonrichey/sets/72157629406199184/">Bariloche, Patagonia</a>, and <a href="http://www.flickr.com/photos/prestonrichey/sets/72157631008675074/">Uruguay</a>.</p>
 				<p>I play bass, both upright and electric. Over the past few years I've played with the MSU Symphony Orchestra, with <a href="http://music.iloveings.com/">Ings</a>, and (once in a while) with only a loop pedal.</p>
 				<p>I drive a standard transmission truck and use my <a href="http://en.wikipedia.org/wiki/Nasal_irrigation">neti pot</a> daily.</p>
