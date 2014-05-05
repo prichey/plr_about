@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 
 # from flask.ext.sqlalchemy import SQLAlchemy
-import os, oauth2, time, urllib, urllib2
+import os, time, urllib, urllib2
 from flask import Flask, url_for, render_template
 import pylast
 import sys
@@ -22,11 +22,12 @@ def main():
 		API_KEY = "d2e1283a31bd5b2c450f7ed61cf9ab2e" # this is a sample key
 		API_SECRET = "39aa505b402710fb60d8176a702f3acf"
 
-		username = "prichey"
-		password_hash = pylast.md5("blackbird")
 
 		network = pylast.LastFMNetwork(api_key = API_KEY, api_secret = 
-		    API_SECRET, username = username, password_hash = password_hash)
+		    API_SECRET)
+
+		# network = pylast.LastFMNetwork(api_key = API_KEY, api_secret = 
+		#     API_SECRET, username = username, password_hash = password_hash)
 
 		me = pylast.User("prichey", network)
 		np = me.get_now_playing()
