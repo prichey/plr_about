@@ -7,6 +7,7 @@ import pylast
 import sys
 import flickrapi
 import json as j
+import vinepy
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -41,6 +42,13 @@ def main():
 			track = str(last[0][0])
 		return status, track
 
+	def vine():
+		vine = vinepy.API(username=os.environ['EMAIL'], password=os.environ['VINEPASS'])
+		user = vine.user
+		likes = user.likes()
+		like = likes[0].shareUrl
+		return like
+
 	# OP_ACCESS = "DBCU5RGLOXVNZXIYPYMLVTCBRE"
 	# OP_SECRET = "5U76P54YG7482CAE8W5971GPZ949EV6UJT1OXNA9QMF60WN415XJE27MF6BQ2VQ8"
 	# OP_URL = "https://openpaths.cc/api/1"
@@ -73,12 +81,13 @@ def main():
 
 	# # try:
 	# lat, lon = get_location()
+	vine = vine()
 	status, track = lastfm()
 	try:
-		return render_template('main.html', status=status, track=track)
+		return render_template('main.html', status=status, track=track, vine=vine)
 	except UnicodeDecodeError:
 		utf_status, utf_track = status.encode('utf-8'), track.encode('utf-8')
-		return render_template('main.html', status=status, track=track)
+		return render_template('main.html', status=status, track=track, vine=vine)
 	except:
 		return render_template('error.html')
 
