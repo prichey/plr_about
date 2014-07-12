@@ -95,60 +95,60 @@ def main():
 def recs():
 	return render_template('recs.html')
 
-@app.route('/gbmf')
-def gbmf():
-	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
-	api_secret = "e8040aeef83b9eec"
-	user_id = "38529954@N04"
-	flickr = flickrapi.FlickrAPI(api_key, api_secret)
-	urls = []
-	for photo in flickr.walk_set('72157632455775153'):
-		id = (photo.get('id'))
-		info = flickr.photos_getInfo(photo_id=id, format="json")[14:-1]
-		lat = j.loads(info)[u'photo'][u'location'][u'latitude']
-		if str(lat)[0] != "-":
-			lat = "+" + str(lat)
-		lon = j.loads(info)[u'photo'][u'location'][u'longitude']
-		if str(lon)[0] != "-":
-			lon = "+" + str(lon)
-		location = str(lat) + "," + str(lon)
-		farm = j.loads(info)[u'photo'][u'farm']
-		server = j.loads(info)[u'photo'][u'server']
-		id = j.loads(info)[u'photo'][u'id']
-		secret = j.loads(info)[u'photo'][u'secret']
-		url = str(j.loads(info)[u'photo'][u'urls'][u'url'][0][u'_content'])
-		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + ".jpg"
-		loc_url = "http://maps.google.com/?q=" + location
-		info = (photo_url, loc_url)
-		urls.append(info)
+# @app.route('/gbmf')
+# def gbmf():
+# 	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
+# 	api_secret = "e8040aeef83b9eec"
+# 	user_id = "38529954@N04"
+# 	flickr = flickrapi.FlickrAPI(api_key, api_secret)
+# 	urls = []
+# 	for photo in flickr.walk_set('72157632455775153'):
+# 		id = (photo.get('id'))
+# 		info = flickr.photos_getInfo(photo_id=id, format="json")[14:-1]
+# 		lat = j.loads(info)[u'photo'][u'location'][u'latitude']
+# 		if str(lat)[0] != "-":
+# 			lat = "+" + str(lat)
+# 		lon = j.loads(info)[u'photo'][u'location'][u'longitude']
+# 		if str(lon)[0] != "-":
+# 			lon = "+" + str(lon)
+# 		location = str(lat) + "," + str(lon)
+# 		farm = j.loads(info)[u'photo'][u'farm']
+# 		server = j.loads(info)[u'photo'][u'server']
+# 		id = j.loads(info)[u'photo'][u'id']
+# 		secret = j.loads(info)[u'photo'][u'secret']
+# 		url = str(j.loads(info)[u'photo'][u'urls'][u'url'][0][u'_content'])
+# 		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + ".jpg"
+# 		loc_url = "http://maps.google.com/?q=" + location
+# 		info = (photo_url, loc_url)
+# 		urls.append(info)
 
-	return render_template('gbmf.html', urls=urls)
+# 	return render_template('gbmf.html', urls=urls)
 
-@app.route('/099', defaults={'page': 1})
-@app.route('/099/<int:page>')
-def pics(page):
-	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
-	api_secret = "e8040aeef83b9eec"
-	user_id = "38529954@N04"
-	flickr = flickrapi.FlickrAPI(api_key, api_secret)
-	urls = []
-	for photo in flickr.walk_set('72157635151188440'):
-		id = (photo.get('id'))
-		info = flickr.photos_getInfo(photo_id=id, format="json")[14:-1]
-		farm = j.loads(info)[u'photo'][u'farm']
-		server = j.loads(info)[u'photo'][u'server']
-		id = j.loads(info)[u'photo'][u'id']
-		secret = j.loads(info)[u'photo'][u'originalsecret']
-		url = str(j.loads(info)[u'photo'][u'urls'][u'url'][0][u'_content'])
-		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + "_o.jpg"
-		fin_url = (url, photo_url)
-		urls.append(fin_url)
-	pages = ((len(urls) + (9)) // 10)
-	for i in range((page - 1) * 10):
-		urls.pop(0)
-	while len(urls) > 10:
-		urls.pop()
-	return render_template('pics.html', urls=urls, pages=pages)
+# @app.route('/099', defaults={'page': 1})
+# @app.route('/099/<int:page>')
+# def pics(page):
+# 	api_key = "6ecd16e73faa6a10afd1db0be78e6823"
+# 	api_secret = "e8040aeef83b9eec"
+# 	user_id = "38529954@N04"
+# 	flickr = flickrapi.FlickrAPI(api_key, api_secret)
+# 	urls = []
+# 	for photo in flickr.walk_set('72157635151188440'):
+# 		id = (photo.get('id'))
+# 		info = flickr.photos_getInfo(photo_id=id, format="json")[14:-1]
+# 		farm = j.loads(info)[u'photo'][u'farm']
+# 		server = j.loads(info)[u'photo'][u'server']
+# 		id = j.loads(info)[u'photo'][u'id']
+# 		secret = j.loads(info)[u'photo'][u'originalsecret']
+# 		url = str(j.loads(info)[u'photo'][u'urls'][u'url'][0][u'_content'])
+# 		photo_url = "http://farm" + str(farm) + ".staticflickr.com/" + str(server) + "/" + str(id) + "_" + str(secret) + "_o.jpg"
+# 		fin_url = (url, photo_url)
+# 		urls.append(fin_url)
+# 	pages = ((len(urls) + (9)) // 10)
+# 	for i in range((page - 1) * 10):
+# 		urls.pop(0)
+# 	while len(urls) > 10:
+# 		urls.pop()
+# 	return render_template('pics.html', urls=urls, pages=pages)
 
 @app.route('/diptych')
 def vine():
